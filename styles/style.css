@@ -40,16 +40,16 @@ ol {
   list-style: none;
 }
 
-/*скроллбар */
-.content__list-container.custom-scrollbar::-webkit-scrollbar {
+/* Кастомный скроллбар */
+.custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
 
-.content__list-container.custom-scrollbar::-webkit-scrollbar-track {
+.custom-scrollbar::-webkit-scrollbar-track {
   background: rgb(217 217 217 / 10%);
 }
 
-.content__list-container.custom-scrollbar::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #d9d9d9;
 }
 
@@ -152,22 +152,20 @@ ol {
   background: transparent;
 }
 
-.search-form__pseudo-checkbox::before {
+.search-form__pseudo-checkbox::after {
   content: "";
   display: block;
   width: 15px;
   height: 15px;
   background-color: #fff;
   opacity: 0;
-  transition: opacity 0.1s ease;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   opacity: 1;
 }
 
 .button {
-  cursor: pointer;
   background-color: transparent;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -216,7 +214,7 @@ ol {
 
 .content__list-container {
   position: relative;
-  height: 302px;
+  max-height: 302px;
   max-width: 399px;
   overflow-y: auto;
 }
@@ -228,7 +226,7 @@ ol {
 }
 
 .content__list-item {
-  padding: 0 3px 0 3px;
+  padding: 0px 3px 0px 3px;
 }
 
 .content__card-link {
@@ -311,13 +309,19 @@ ol {
 }
 
 .more-button {
-  width: 100%;
-  padding: 6px 0;
+  width: 99%;
   margin-top: 10px;
 }
 
+.more-button:focus-visible {
+  margin: 2px;
+  padding: 6px 140px;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
 .preloader {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -326,7 +330,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 1;
 }
 
 /* Скрытие элементов */
